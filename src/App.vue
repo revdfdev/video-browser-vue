@@ -1,7 +1,7 @@
 <template>
   <div class="container">
     <SearchBar v-on:termChange="onTermChange"></SearchBar>
-     <div>
+     <div class="row">
       <VideoDetails v-bind:video="selectedVideo" />
       <VideoList v-bind:videos="videos" v-on:videoSelect="onVideoSelected" />
     </div>

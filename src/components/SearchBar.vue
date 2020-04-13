@@ -1,6 +1,6 @@
 <template>
     <div class="input-group m-3">
-        <input name="test_input" class="form-input" @input="onInput" />
+        <input name="test_input" class="form-input" @input="onInput" @keyup.enter="onEnter" />
         <div class="input-group-append">
         	<button class="btn btn-outline-seconday" @click="onSearchClick">
         		<i class="fa fa-search"></i> Search
@@ -23,6 +23,9 @@ export default {
             this.searchTerm = e.target.value;
         },
         onSearchClick: function(e) {
+        	this.$emit('termChange', this.searchTerm);
+        },
+        onEnter: function(e) {
         	this.$emit('termChange', this.searchTerm);
         }
     }
